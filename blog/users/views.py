@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 
 from users.forms import UserForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 def login_view(request):
@@ -32,8 +32,9 @@ def login_view(request):
 def register_view():
     ...
 
-def logout_view():
-    ...
+def logout_view(request):
+    logout(request)
+    return redirect('users-login')
 
-def profile_view():
-    ...
+def profile_view(request):
+    return render(request, 'users/profile.html', {'user' : request.user})
