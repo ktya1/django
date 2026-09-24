@@ -10,7 +10,7 @@
         <nav>
             <a href="#">главная</a>
             <a href="#">о сайте</a>
-            <a href="#">создать пост</a>
+            <a href="{% url 'create-post' %}">создать пост</a>
             <a href="#">главная</a>
             
             {% if user.is_authenticated  %}

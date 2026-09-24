@@ -10,7 +10,7 @@
 
     </form>
 
-    <p>нет аккаунта? <a href="#">регистрация</a></p>
+    <p>нет аккаунта? <a href="{% url 'users-register' %}">регистрация</a></p>
 
 
     {% if form.errors %}
