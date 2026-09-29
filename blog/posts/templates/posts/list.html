@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>Посты</h1>
+
+    {% for post in posts %}
+        <article>
+            <h2>
+                <a href="{% url 'read-post' post.id %}">{{post.title}}</a>
+            </h2>
+
+
+        <hr>
+    {% empty %}
+        <p>постов пока нет</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+    <h1>Пост</h1>
+
+    <article>
+            <h2>
+                {{post.title}}
+            </h2>
+
+            <p>
+                {{post.text}}
+            </p>
+
+            <small>
+               автор: {{post.author}}
+            </small>
+
+            <br>
+
+            <small> 
+                пост создан: {{post.created}} || обновлен: {{post.updated}}
+            </small>
+            
+        </article>
+
+{% endblock %}
