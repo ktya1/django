@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+    <h1>Пост</h1>
+
+    <article>
+            <h2>
+                {{post.title}}
+            </h2>
+
+            <p>
+                {{post.text}}
+            </p>
+
+            <small>
+               автор: {{post.author}}
+            </small>
+
+            <br>
+
+            <small> 
+                пост создан: {{post.created}} || обновлен: {{post.updated}}
+            </small>
+
+            <form method="post" action="{% url 'delete-post' post_id=post.pk %}">
+                {% csrf_token %}
+                <button type="submit" style="color: red;">Удалить пост</button>
+            </form>
+            
+        </article>
+
+{% endblock %}
