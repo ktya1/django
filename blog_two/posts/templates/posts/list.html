@@ -1,18 +1,41 @@
 {% extends 'base.html' %}
+{% block styles %}
+    <style>
 
+    :root{
+        --backgrount_color:#95d5b2;
+        --color:#1b4332;
+        --color_hover:#10271d;
+        --background:#111727;
+    }
+
+
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: var(--backgrount_color);
+    }
+
+
+    .s{
+        color: var(--color);
+    }
+
+    </style>
+{% endblock %}
 
 {% block content %}
 
-    <h1>Посты</h1>
+    <h1 style="color: white;">Посты</h1>
 
     {% for post in posts %}
-        <article>
+        <article class="conteiner_list">
             <h2>
                 <a href="{% url 'read-post' post.id %}">{{post.title}}</a>
             </h2>
 
 
-        <hr>
+        <div class="s">----------------------------------------------------------------</div>
     {% empty %}
         <p>постов пока нет</p>
     {% endfor %}
