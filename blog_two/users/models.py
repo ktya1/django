@@ -1,5 +1,6 @@
 
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 class User(AbstractUser):
@@ -7,7 +8,12 @@ class User(AbstractUser):
     last_login = None
     last_name = None
 
-
+    photo = models.ImageField(
+        upload_to='profile_photos/',
+        default='profile_photos/default.png',  # фото по умолчанию
+        blank=True,
+        null=True,
+    )
     REQUIRED_FIELDS = []
 
     class Meta:

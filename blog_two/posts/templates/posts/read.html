@@ -2,7 +2,6 @@
 
 {% block content%}
 
-    <h1>Пост</h1>
 
     <article>
             <h2>
@@ -25,12 +24,17 @@
 
             <form method="get" action="{% url 'delete-post' post_id=post.pk %}">
                 {% csrf_token %}
-                <button type="submit" style="color: red;">Удалить пост</button>
+                <button type="submit" style="color: red;">Удалить запись</button>
             </form>
 
             <form method="get" action="{% url 'update-post' post_id=post.pk %}">
                 {% csrf_token %}
-                <button type="submit" style="color: blue;">Изменить пост</button>
+                <button type="submit" style="color: blue;">Изменить запись</button>
+            </form>
+
+            <form method="get" action="">
+                {% csrf_token %}
+                <button type="submit" style="color: blue;">Выполнить </button>
             </form>
             
         </article>

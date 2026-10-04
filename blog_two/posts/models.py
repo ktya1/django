@@ -28,6 +28,7 @@ class Post(models.Model):
         related_name='posts'
 
     )
+    
 
     def __str__(self):
         return self.title
